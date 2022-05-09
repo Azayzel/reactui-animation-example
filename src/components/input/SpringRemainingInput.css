@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  width: fit-content;
+}
+
+.container div,
+input {
+  border-radius: 12px;
+  font-size: 32px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+input {
+  outline: none;
+  padding: 20px;
+  padding-right: 70px;
+  border: 2px solid #333;
+  width: 300px;
+}
+
+input:focus {
+  border-color: #0055ff;
+}
+
+.container div {
+  color: #ccc;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 20%
+  );
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 50px;
+}
+
+.container div span {
+  display: block;
+}

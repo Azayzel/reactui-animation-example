@@ -1,0 +1,164 @@
+.track-wins-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.svg-logo {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  z-index: inherit;
+}
+.svg-logo .svg-icon {
+  width: 100%;
+  max-width: 800px;
+}
+.svg-logo .svg-icon path {
+  stroke-width: 2px;
+  stroke-dashoffset: -3000;
+  stroke-dasharray: 3000;
+}
+.svg-logo .svg-icon path.is-active {
+  animation-name: svgicon;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.svg-logo .svg-icon path.is-sub {
+  animation-name: icongrey;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.svg-logo .svg-icon g path.path3:hover {
+  fill: #d34b29e1;
+}
+
+.logo .icon path.is-sub {
+  animation-name: icongrey;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.svg-logo .svg-icon g text.track-name {
+  opacity: 0;
+  top: -1000;
+  transition: all 0.2s linear;
+}
+.svg-logo .svg-icon g text.track-name.is-active {
+  animation-name: svgtext;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.svg-logo .svg-icon:hover g text.track-name {
+  opacity: 1;
+  top: 0;
+  transition: right opacity 0.2s ease-in;
+}
+.svg-logo .text {
+  width: 100%;
+  max-width: 900px;
+}
+.svg-logo .text text {
+  color: #61dafb;
+  stroke-width: 3px;
+  stroke-dashoffset: -800;
+  stroke-dasharray: 800;
+}
+.svg-logo .text text.is-active {
+  animation-name: svgtext;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes icongrey {
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: rgba(245, 245, 245, 0.1);
+    stroke-width: 0px;
+  }
+}
+
+@keyframes svgicon {
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 2px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #499db4e1;
+    stroke-width: 0px;
+  }
+}
+
+@keyframes pathhover {
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #df2727e1;
+    stroke-width: 0px;
+  }
+}
+
+@keyframes svgtext {
+  50% {
+    fill: transparent;
+  }
+  75% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #61dafb;
+    stroke-width: 0px;
+  }
+}
+
+.marker {
+  offset-path: path(
+    "M 209.86293,72.795967 C 177.96769,73.434436 125.90935,85.03546 95.367251,94.530872 88.051438,96.813069 61.791789,105.50705 56.840226,108.98464 c -4.148631,2.90701 -10.051829,10.21538 -13.308283,14.30428 -9.025829,11.30212 -23.493904,25.64716 -21.456785,40.52203 2.646801,19.46633 31.984445,24.6963 49.500786,27.11431 h 10.408718 c 13.085216,2.07839 25.704268,11.03358 30.849138,12.75874 4.01481,1.34489 12.24286,3.43375 16.73347,3.8277 l 40.14783,1.12752 17.84347,1.23616 c 11.06295,0.69279 23.62776,0.4077 29.97711,11.04405 3.28622,5.51519 -1.5018,10.63651 -6.24526,13.73372 -8.72849,5.70543 -23.61288,6.57486 -34.14054,6.58842 h -47.58261 l -25.27828,-1.35845 H 44.810737 c -43.8503492,0.0676 -71.221907,30.46402 -99.423115,52.19093 -9.55225,7.3649 -22.569254,21.23681 -35.88993,22.33967 -10.532322,0.88235 -19.821142,-7.8859 -18.185492,-17.47645 1.72487,-10.07957 10.955331,-14.95757 18.03324,-22.03502 4.564972,-4.56434 8.752044,-9.98385 15.65152,-11.39661 7.077925,-8.36795 22.938548,-22.82101 32.083337,-30.50978 l 22.438177,-20.71609 c 7.672695,-6.22161 22.4827818,-15.88007 23.8656519,-25.37548 1.5315669,-10.39202 -8.4013007,-17.15701 -16.5646939,-22.50924 -4.594696,-3.01571 -18.958701,-11.49232 -23.791312,-13.06811 -4.237822,-1.37198 -7.568605,-0.99164 -11.895642,-1.15468 -14.587051,-0.54337 -14.512701,-0.0411 -28.252185,5.61037 -54.675383,22.53636 -104.830433,72.96137 -105.573913,130.28719 v 9.509 c 0.10406,62.59656 47.89487,109.76132 111.521737,126.89117 33.947226,9.14226 53.589919,7.53928 87.730445,7.59362 l 22.30434,1.35845 H 194.99333 l 22.30444,1.35841 h 37.17395 c 11.0778,-0.0144 19.34528,-1.71159 27.99937,-8.68036 4.74341,-3.8172 7.30093,-9.00639 12.28229,-11.46519 3.10775,-1.5214 22.54226,-3.24664 26.63138,-3.02928 8.31205,0.44827 11.628,5.90916 17.84347,10.22897 4.90693,3.40969 13.3677,6.91442 19.33043,8.46306 10.05184,2.62175 17.75422,4.46923 28.25218,4.4828 h 63.9391 c 44.34104,-0.0676 93.54449,-18.59691 123.16459,-48.90353 41.38202,-42.34235 49.67925,-108.74248 17.42716,-157.57813 -27.59791,-41.81253 -78.60055,-62.25694 -125.72218,-80.44638 L 410.60212,124.68807 C 349.25033,102.27398 287.77953,74.140843 220.27167,72.795967 c -10.40874,0 0,0 -10.40874,0 z"
+  );
+  animation: move 10s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
